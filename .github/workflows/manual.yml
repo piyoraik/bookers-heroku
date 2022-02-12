@@ -5,6 +5,9 @@ name: Manual workflow
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -22,7 +25,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Heroku CLI Install
       run: |
-        sudo apt-get -y install snapd
         sudo snap install --classic heroku
       
     - name: Heroku Login
