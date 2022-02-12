@@ -21,7 +21,9 @@ jobs:
     
     # Runs a single command using the runners shell
     - name: Heroku CLI Install
-      run: snap install --classic heroku
+      run: |
+        apt -y install snapd
+        snap install --classic heroku
       
     - name: Heroku Login
       run: |
