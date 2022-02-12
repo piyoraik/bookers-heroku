@@ -30,13 +30,13 @@ jobs:
     - name: Heroku Login
       run: |
        data=$(cat <<EOF
-          machine api.heroku.com
-              login ${ HEROKU_EMAIL }
-              password ${ HEROKU_TOKEN }
-          machine git.heroku.com
-              login { HEROKU_EMAIL }
-              password ${ HEROKU_TOKEN }
-          EOF)
+       machine api.heroku.com
+          login ${ HEROKU_EMAIL }
+          password ${ HEROKU_TOKEN }
+       machine git.heroku.com
+          login { HEROKU_EMAIL }
+          password ${ HEROKU_TOKEN }
+       EOF)
        echo "$data" > ~/.netrc
        heroku login
       env:
