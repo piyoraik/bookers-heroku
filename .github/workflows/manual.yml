@@ -22,7 +22,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Heroku CLI Install
       run: |
-        apt -y install snapd
+        apt-get -y install snapd
         snap install --classic heroku
       
     - name: Heroku Login
