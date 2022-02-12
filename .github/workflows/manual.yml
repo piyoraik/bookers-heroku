@@ -25,7 +25,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Heroku CLI Install
       run: |
-        sudo snap install --classic heroku
+        curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
       
     - name: Heroku Login
       run: |
@@ -37,6 +37,7 @@ jobs:
             login { HEROKU_EMAIL }
             password ${ HEROKU_TOKEN }
        EOF
+       heroku login
       env:
         HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
         HEROKU_TOKEN: ${{ secrets.HEROKU_TOKEN }}
