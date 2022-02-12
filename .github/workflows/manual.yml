@@ -36,8 +36,7 @@ jobs:
           machine git.heroku.com
               login { HEROKU_EMAIL }
               password ${ HEROKU_TOKEN }
-          EOF
-          )
+          EOF)
        echo "$data" > ~/.netrc
        heroku login
       env:
