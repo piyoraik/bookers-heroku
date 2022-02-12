@@ -30,12 +30,12 @@ jobs:
     - name: Heroku Login
       run: |
        cat <<<EOF > ~/.netrc
-        machine api.heroku.com
-            login ${ HEROKU_EMAIL }
-            password ${ HEROKU_TOKEN }
-        machine git.heroku.com
-            login { HEROKU_EMAIL }
-            password ${ HEROKU_TOKEN }
+          machine api.heroku.com
+              login ${ HEROKU_EMAIL }
+              password ${ HEROKU_TOKEN }
+          machine git.heroku.com
+              login { HEROKU_EMAIL }
+              password ${ HEROKU_TOKEN }
        EOF
        heroku login
       env:
