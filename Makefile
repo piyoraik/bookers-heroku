@@ -4,6 +4,9 @@ docker.build:
 docker.up:
 	@docker compose up -d
 
+docker.down:
+	@docker compose down
+
 bundle.install:
 	@docker compose run --rm --no-deps web bundle install
 
